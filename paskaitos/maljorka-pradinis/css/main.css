@@ -18,3 +18,13 @@
 .footer a:hover {
     color: #fff;
 }
+
+.card {
+    margin: 50px 0;
+    flex-direction: row;
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
