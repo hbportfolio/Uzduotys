@@ -179,8 +179,8 @@ Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valan
 */
 
 let hour = Math.round(Math.random() * 24);
-let minute = Math.round(Math.random() * 60);;
-let second = Math.round(Math.random() * 60);;
+let minute = Math.round(Math.random() * 60);
+let second = Math.round(Math.random() * 60);
 let addseconds = Math.round(Math.random() * 300);
 
 console.log(`${hour}:${minute}:${second} + ${addseconds}s`);
