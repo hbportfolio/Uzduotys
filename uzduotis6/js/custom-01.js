@@ -178,9 +178,9 @@ if (antrasvidurkis != 0) {
 Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją Math.random(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.
 */
 
-let hour = 23;
-let minute = 59;
-let second = 56;
+let hour = Math.round(Math.random() * 24);
+let minute = Math.round(Math.random() * 60);;
+let second = Math.round(Math.random() * 60);;
 let addseconds = Math.round(Math.random() * 300);
 
 console.log(`${hour}:${minute}:${second} + ${addseconds}s`);
