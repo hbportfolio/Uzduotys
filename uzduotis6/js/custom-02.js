@@ -3,14 +3,20 @@ Užduotis 1
 Naudodami while loop, konsolėje parašykite nuo 10 iki 1. 
 */
 
-
+let i = 10;
+while (i > 0) {
+    // console.log(i);
+    i--;
+}
 
 /* 
 Užduotis 2
 Naudodami for loop, konsolėje parašykite nuo 10 iki 1.
 */
 
-
+for (let i = 10; i > 0; i--) {
+    // console.log(i);
+}
 
 /*
 Užduotis 3
@@ -26,14 +32,29 @@ Po 1 mėnesio(-ių) bus 16 avių!
 Po 2 mėnesio(-ių) bus 64 avių!
 */
 
+let numAvys = 4;
+let numMenuo = 1;
+let kiekMenSpausdinti = 12;
 
+while (numMenuo <= kiekMenSpausdinti) {
+    numAvys = numAvys * 4;
+    // console.log(`Po ${numMenuo} mėnesio(-ių) bus ${numAvys} avių!`);
+    numMenuo++;
+}
 
 /*
 Užduotis 4
 Atlikite užduotį JS 03 su for loop
 */
 
+let numAvysForLoop = 4;
+let numMenuoForLoop = 1;
+let kiekMenSpausdintiForLoop = 12;
 
+for (numMenuoForLoop; numMenuoForLoop <= kiekMenSpausdintiForLoop; numMenuoForLoop++) {
+    numAvysForLoop = numAvysForLoop * 4;
+    // console.log(`Po ${numMenuoForLoop} mėnesio(-ių) bus ${numAvysForLoop} avių!`);
+}
 
 /*
 Užduotis 5
@@ -48,7 +69,20 @@ let totalGen = 19;
 let totalMW = 0;
 */
 
+let currentGen = 1;
+let totalGen = 19;
+let totalMW = 0;
 
+while (currentGen < 5) {
+    totalMW += 64;
+    // console.log(`Generatorius #${currentGen} įjungtas, pridėjo 62 MW, viso generuojama ${totalMW} MW!`);
+    currentGen++;
+}
+
+for (currentGen; currentGen <= totalGen; currentGen++) {
+    totalMW += 124;
+    // console.log(`Generatorius #${currentGen} įjungtas, pridėjo 62 MW, viso generuojama ${totalMW} MW!`);
+}
 
 /*
 Užduotis 6
@@ -64,7 +98,23 @@ let totalGen = 19;
 let totalMW = 0;
 */
 
+let totalGen2nd = 19;
+let totalMW2nd = 0;
 
+for (let i = 1; i <= totalGen2nd; i++) {
+    if (i % 2 == 0) {
+        if (i < 5) {
+            totalMW2nd += 62;
+            // console.log(`Generatorius #${i} įjungtas, pridėjo 62 MW, viso generuojama ${totalMW2nd} MW!`);
+        } else {
+            totalMW2nd += 124;
+            // console.log(`Generatorius #${i} įjungtas, pridėjo 124 MW, viso generuojama ${totalMW2nd} MW!`);
+        }
+    } else {
+        // console.log(`Generatorius #${i} išjungtas.`)
+    }
+
+}
 
 /*
 Užduotis 7
@@ -79,14 +129,26 @@ num--;
 }
 */
 
-
+let num=10;
+while (num > 0) {
+    if ( num % 2 == 0) {
+        // console.log(num);
+    }
+    num--;
+}
 
 /*
 Užduotis 8
 Sukurk funkciją maxOf2, kuri priima du skaičius ir gražina didesnį skaičių. Nepamiršk galimybės, kad skaičiai bus lygūs. Tuo atveju gražink vieną iš skaičių.
 */
 
-
+function maxOf2(x, y) {
+    if (typeof x === 'number' && typeof y === 'number') {
+        return Math.max(x, y);
+    }
+    return "One or more value is not a number."
+}
+// console.log(maxOf2(11,132.232));
 
 /*
 Užduotis 9
@@ -105,6 +167,10 @@ Lietuvoje šiuo metu -3.3 laipsnių pagal Celsijų
 */
 
 
+let F = 26;
+let C = (5/9) * (F - 32);
+let text = `Lietuvoje šiuo metu ${C.toFixed(1)} laipsnių pagal Celsijų`;
+// console.log(text);
 
 /*
 Užduotis 10
@@ -119,7 +185,25 @@ Turime masyvą, kuriame yra trumpos tekstinės eilutės (pateikta apačioje). M�
 let posts = ["Sveikinu radus darbą", "Ar tikrai pabaigus kursą viskas bus gerai", "Javascript nėra Java", "Rasti video medžiagą visada šaunu"];
 */
 
+let posts = ["Sveikinu radus darbą", "Ar tikrai pabaigus kursą viskas bus gerai", "Javascript nėra Java", "Rasti video medžiagą visada šaunu"];
 
+function ilgiausiZodiziai(x) {
+    let result = "";
+    if (Array.isArray(x)) {
+        for (let i = 0; i < x.length; i++) {
+            let temp = "";
+            for (let n = 0; n < x[i].split(' ').length; n++) {
+                if(temp.length < x[i].split(' ')[n].length) {
+                    temp = x[i].split(' ')[n];
+                }
+            }
+            result += " " + temp;
+        }
+        return result.trimStart();
+    }
+    return "Not an array."
+}
+// console.log(ilgiausiZodiziai(posts));
 
 /*
 Užduotis 11
@@ -158,3 +242,27 @@ Modelis: acer peizažas
 Kaina: 1240
 Spalvos: balta ir juoda
 */
+
+let pcs = [
+    { "modelis":"lenovo idėja", "kaina":1234, "spalva":{"raudona":1,"žalia":2} },
+    { "modelis":"hp monstras", "kaina":800, "spalva":{"juoda":2,"geltona":0} },
+    { "modelis":"toshiba sriuba", "kaina":256, "spalva":{"mėlyna":3,"žalia":1} },
+    { "modelis":"dell apskritimas", "kaina":697, "spalva":{"juoda":1,"balta":2} },
+    { "modelis":"acer peizažas", "kaina":620, "spalva":{"juoda":4,"balta":2} },
+    { "modelis":"apple 256", "kaina":2560, "spalva":{"balta":3,"juoda":1} },
+    { "modelis":"asus pokšt", "kaina":1001, "spalva":{"juoda":2,"geltona":3} }
+    ];
+
+let result = "";
+for (let i = 0; i < pcs.length; i++) {
+    if(pcs[i]["kaina"] * 2 <= 1600) {
+        if(pcs[i]["spalva"]["juoda"] >=2 && pcs[i]["spalva"]["balta"] >=2) {
+            result += `Modelis: ${pcs[i]["modelis"]}\nKaina: ${pcs[i]["kaina"] * 2}\nSpalvos: balta ir juoda\n\n`
+        } else if(pcs[i]["spalva"]["juoda"] >=2) {
+            result += `Modelis: ${pcs[i]["modelis"]}\nKaina: ${pcs[i]["kaina"] * 2}\nSpalvos: juoda\n\n`
+        } else if(pcs[i]["spalva"]["balta"] >=2) {
+            result += `Modelis: ${pcs[i]["modelis"]}\nKaina: ${pcs[i]["kaina"] * 2}\nSpalvos: balta\n\n`
+        }
+    }
+}
+// console.log(result);
