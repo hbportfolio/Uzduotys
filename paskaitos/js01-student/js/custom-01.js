@@ -209,10 +209,37 @@ let skc3 = Math.round(Math.random() * 8999 + 1000);
 let skc4 = Math.round(Math.random() * 8999 + 1000);
 let skc5 = Math.round(Math.random() * 8999 + 1000);
 let skc6 = Math.round(Math.random() * 8999 + 1000);
-let result = "";
-let temp = `${skc1} ${skc2} ${skc3} ${skc4} ${skc5} ${skc6}`;
-let maxskc = Math.max(skc1, skc2, skc3, skc4, sck5, skc6);
-let minskc = Math.min(skc1, skc2, skc3, skc4, sck5, skc6);
+let templist1 = `${skc1} ${skc2} ${skc3} ${skc4} ${skc5} ${skc6}`;
+let templist2, templist3, maxtwo, mintwo, result = "";
+let empty1, empty2, empty3, empty4;
+let maxskc = Math.max(skc1, skc2, skc3, skc4, skc5, skc6);
+let minskc = Math.min(skc1, skc2, skc3, skc4, skc5, skc6);
+
+templist2 = templist1.replace(maxskc, "").replace(minskc, "").replaceAll(" ", "");
+
+empty1 = templist2.substring(0, 4);
+empty2 = templist2.substring(4, 8);
+empty3 = templist2.substring(8, 12);
+empty4 = templist2.substring(12, 16);
+
+maxtwo = Math.max(empty1, empty2, empty3, empty4);
+mintwo = Math.min(empty1, empty2, empty3, empty4);
+
+templist3 = templist2.replace(maxtwo, "").replace(mintwo, "").replaceAll(" ", "");
+empty1 = templist3.substring(0, 4);
+empty2 = templist3.substring(4, 8);
+
+if (empty1 >= empty2) {
+    result += maxskc + " " + maxtwo + " " + empty1 + " " + empty2 + " " + mintwo + " " + minskc;
+} else {
+    result += maxskc + " " + maxtwo + " " + empty2 + " " + empty1 + " " + mintwo + " " + minskc;
+}
+
+console.log(result);
+
+
+
+
 
 
 
