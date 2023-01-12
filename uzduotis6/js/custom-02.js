@@ -169,8 +169,9 @@ Lietuvoje šiuo metu -3.3 laipsnių pagal Celsijų
 
 let F = 26;
 let C = (5/9) * (F - 32);
-let text = `Lietuvoje šiuo metu ${C.toFixed(1)} laipsnių pagal Celsijų`;
-// console.log(text);
+let text = `Lietuvoje šiuo metu laipsnių pagal Celsijų`;
+let tempresult = text.slice(0, 20) + C.toFixed(2) + " " + text.slice(20);
+// console.log(tempresult);
 
 /*
 Užduotis 10
