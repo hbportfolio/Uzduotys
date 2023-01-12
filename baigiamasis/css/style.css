@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'Reey';
+    src: url('../fonts/Reey-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+section > .container {
+    padding: 60px 0px 0 40px;
+}
+
+/* Header */
+
+.header {
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.main-nav-desktop ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.main-nav-desktop ul a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+}
+
+.main-nav-desktop ul a:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav-desktop input {
+    margin-left: 25px;
+}
+
+/* Hero */
+
+.hero {
+    background-image: url('../images/header-background.webp');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+}
+
+.hero .container {
+    display: flex;  
+}
+
+.hero-text {
+    width: 40%;
+}
+
+.hero-images {
+    width: 60%;
+}
+
+h1 {
+    font-family: 'Reey';
+    font-size: 5rem;
+    font-weight: 400;
+    color: white;
+}
+
+.hero-text .upper-text {
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+.hero .lower-text {
+    font-size: 1rem;
+    color: white;
+}
+
+.large-dish {
+    float: right;
+}
+
+.small-dish {
+    margin-top: -100px;
+}
+
+.hero-leaves {
+    position: absolute;
+    margin-top: -150px;
+    margin-left: -50px;
+}
