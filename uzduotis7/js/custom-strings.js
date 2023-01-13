@@ -108,9 +108,11 @@ Parašykite kodą, kuris generuotų atsitiktinį stringą su 10 atsitiktine tvar
 let sentences2 = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood" + " " + "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
 let wordlist = sentences2.split(' ');
 let wordamount = 10;
-let wordresult = "";
+let wordresult = [];
 
-for (let y = 0; y < wordamount; y++) {
-    wordresult += wordlist[(Math.round(Math.random() * wordlist.length - 1))] + " ";
+while (wordresult.length < 10) {
+    if (!wordresult.includes(wordlist[(Math.round(Math.random() * wordlist.length - 1))])) {
+        wordresult.push(wordlist[(Math.round(Math.random() * wordlist.length - 1))]);
+    }
 }
-console.log(wordresult.trimEnd());
+console.log(wordresult.toString());
